@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "order": 2,
+  "pokemon": [
+    "lucario:lucario"
+  ],
+  "enabled": true,
+  "allow_random": true
+}

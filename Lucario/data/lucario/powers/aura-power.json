@@ -1,0 +1,54 @@
+{
+    "type": "origins:multiple",
+    "name": "Aura Power",
+    "description": "As you take damage you gain more focus, your instincts begin to kick in and thus increase the power of your aura.",
+    "hidden": "false",
+    "loading_priority": 1,
+    "setup": {
+        "type": "action_on_callback",
+        "entity_action_gained": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:execute_command",
+                    "command": "scoreboard objectives add health dummy"
+                }
+            ]
+        }
+    },
+    "aura": {
+    	"type": "origins:resource",
+    	"min": 0,
+    	"max": 100,
+    	"start": 100
+    },
+    "update": {
+        "type": "action_over_time",
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:execute_command",
+                    "command": "execute store result score $current health run data get entity @s Health 100"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "execute store result score $max health run attribute @s minecraft:generic.max_health get"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "scoreboard players operation $percentage health = $current health"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "scoreboard players operation $percentage health /= $max health"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "resource operation @s lucario:aura-power_aura = $percentage health"
+                }
+            ]
+        },
+        "interval": 20
+    }
+}

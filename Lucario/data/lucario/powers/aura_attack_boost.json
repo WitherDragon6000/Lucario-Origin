@@ -1,0 +1,12 @@
+{
+	"name": "Aura Attack Boost",
+	"description": "",
+	"hidden": "false",
+	"loading_priority": 1,
+	"type": "origins:modify_attribute",
+	"attribute": "minecraft:generic.attack_damage",
+	"modifier": {
+	    "operation": "multiply_base_multiplicative",
+	    "resource": "lucario:aura-power_aura"
+	}
+}

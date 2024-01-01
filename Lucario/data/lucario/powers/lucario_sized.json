@@ -1,0 +1,49 @@
+{
+  "name": "lucario_sized",
+  "description": "You are 3 feet and 11 inches tall.",
+  "badges": [
+    {
+      "type": "origins:tooltip",
+      "text": " (Roughly 0.635x Normal Height) "
+    }
+  ],
+  "type": "origins:action_on_callback",
+  "entity_action_gained": {
+    "type": "origins:and",
+    "actions": [
+      {
+        "type": "origins:execute_command",
+        "command": "scale reset @s"
+      },
+      {
+        "type": "origins:execute_command",
+        "command": "scale set pehkui:base 0.635135135 @s"
+      },
+      {
+        "type": "origins:execute_command",
+        "command": "scale divide pehkui:reach 0.635135135"
+      },
+      {
+        "type": "origins:execute_command",
+        "command": "scale divide pehkui:motion 0.635135135"
+      },
+      {
+        "type": "origins:execute_command",
+        "command": "attribute @s porting_lib:entity_gravity base set 0.075"
+      },
+      {
+        "type": "origins:execute_command",
+        "command": "scale divide pehkui:falling 1.57446809 @s"
+      },
+      {
+        "type": "origins:execute_command",
+        "command": "scale persist set true @s"
+      } 
+    ]
+  },
+  "execute_chosen_when_orb": true,
+  "entity_action_lost": {
+    "type": "origins:execute_command",
+    "command": "scale reset @s"
+  }
+}

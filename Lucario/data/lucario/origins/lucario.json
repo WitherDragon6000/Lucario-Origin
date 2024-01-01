@@ -1,0 +1,12 @@
+{
+  "replace": false,
+  "powers": [
+    "lucario:aura_fists",
+    "lucario:lucario_sized",
+    "lucario:aura-power"
+  ],
+  "icon": "minecraft:bone",
+  "impact": 3,
+  "name": "Lucario",
+  "description": "It's Lucario!"
+}

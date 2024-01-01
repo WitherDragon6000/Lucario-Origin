@@ -1,0 +1,41 @@
+{
+  "name": "Aura Fists",
+  "type": "origins:target_action_on_hit",
+  "description": "Your fists are filled with aura, light up enemies, and have additional power.",
+  "cooldown": 0,
+  "hud_render": {
+        "should_render": false,
+        "bar_index": 15
+    },
+  "entity_action": {
+    "type": "origins:and",
+    "actions": [
+      {
+        "type": "origins:apply_effect",
+        "effects": [
+          {
+            "effect": "minecraft:glowing",
+            "amplifier": 1,
+            "duration": 2000
+          }
+        ]
+      },
+      
+      {
+        "type": "origins:if_else",
+        "condition": {
+          "type": "origins:relative_health",
+          "comparison": "<=",
+          "compare_to": 0.5
+        },
+        "if_action": {
+          "type": "origins:play_sound",
+          "category": "player",
+          "sound": "minecraft:entity.wolf.ambient",
+          "volume": 100,
+          "pitch": 0.1
+        }
+      }
+    ]
+  }
+}

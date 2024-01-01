@@ -1,0 +1,14 @@
+{
+	"type": "",				//The namespace and ID of the desired Power Type.
+	"name": "",				//The display name of the power.
+	"description": "",		//The description of the power.
+	"hidden": "false", 		//If set to true, this power will not be displayed in the power list of the origin.
+	"condition": "",		//optional	If set, this power will only be active when the player with this power fulfills the condition.
+	"loading_priority": 0,	//Specifies when this power is loaded. Higher numbers mean it's loaded later, which means it will override those with lower loading priorities which share the same ID.
+	"badges": [ 			//optional	If set, it will display icon(s) after the name of the power.
+		{
+            "sprite": "minecraft:textures/item/grass.png",
+            "text": "Sample Text"
+        }
+	]
+}
